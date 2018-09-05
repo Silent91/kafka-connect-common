@@ -37,6 +37,7 @@ class AvroConverter extends Converter {
                        sourceTopic: String,
                        messageId: String,
                        bytes: Array[Byte],
+                       properties: Map[String, String] = Map.empty[String, String],
                        keys: Seq[String] = Seq.empty,
                        keyDelimiter: String = "."): SourceRecord = {
     Option(bytes) match {

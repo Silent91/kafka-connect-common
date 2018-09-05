@@ -37,6 +37,7 @@ class JsonConverterWithSchemaEvolution extends Converter {
                        mqttSource: String,
                        messageId: String,
                        bytes: Array[Byte],
+                       properties: Map[String, String] = Map.empty[String, String],
                        keys: Seq[String] = Seq.empty,
                        keyDelimiter: String = "."): SourceRecord = {
     require(bytes != null, s"Invalid $bytes parameter")
